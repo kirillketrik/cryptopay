@@ -32,11 +32,11 @@ class InMemoryTransactionRepository(TransactionRepository):
         return self._transactions.get(transaction_id)
 
     def get_transaction_by_hash_and_network(
-        self, hash: str, network: str
+        self, tx_hash: str, network: str
     ) -> Optional[Transaction]:
         """Retrieves a transaction by its hash and network."""
         for tx in self._transactions.values():
-            if tx.hash == hash and tx.network == network:
+            if tx.hash == tx_hash and tx.network == network:
                 return tx
         return None
 

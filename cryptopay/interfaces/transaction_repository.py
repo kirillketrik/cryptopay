@@ -41,12 +41,12 @@ class TransactionRepository(ABC):
         pass
 
     @abstractmethod
-    def get_transaction_by_hash_and_network(self, hash: str, network: str) -> Optional[Transaction]:
+    def get_transaction_by_hash_and_network(self, tx_hash: str, network: str) -> Optional[Transaction]:
         """
         Get transaction by hash and network.
         
         Args:
-            hash: The transaction hash
+            tx_hash: The transaction hash
             network: The blockchain network
             
         Returns:

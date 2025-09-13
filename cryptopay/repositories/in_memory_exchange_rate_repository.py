@@ -19,7 +19,8 @@ class InMemoryExchangeRateRepository(ExchangeRateRepository):
     def __init__(self):
         self._exchange_rates: Dict[str, ExchangeRate] = {}
 
-    def _get_key(self, fiat_currency: str, crypto_currency: str) -> str:
+    @staticmethod
+    def _get_key(fiat_currency: str, crypto_currency: str) -> str:
         return f"{fiat_currency.upper()}_{crypto_currency.upper()}"
 
     def save_exchange_rate(self, exchange_rate: ExchangeRate) -> ExchangeRate:
