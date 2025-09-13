@@ -1,14 +1,26 @@
 [tool.poetry]
 name = "pay-with-crypto"
 version = "0.1.0"
-description = ""
+description = "A Python library for handling cryptocurrency payments."
 authors = ["kirillketrik <kirillketrik34@gmail.com>"]
+license = "MIT"
 readme = "README.md"
+homepage = "https://github.com/kirillketrik/pay-with-crypto"
+repository = "https://github.com/kirillketrik/pay-with-crypto"
+keywords = ["crypto", "payment", "blockchain", "invoice", "wallet"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
+packages = [{include = "cryptopay"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
 pydantic = "^2.11.9"
-
 
 [build-system]
 requires = ["poetry-core"]
