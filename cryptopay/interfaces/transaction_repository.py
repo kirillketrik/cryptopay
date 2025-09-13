@@ -138,12 +138,12 @@ class TransactionRepository(ABC):
         pass
 
     @abstractmethod
-    def get_transactions_by_hash(self, hash: str) -> List[Transaction]:
+    def get_transactions_by_hash(self, tx_hash: str) -> List[Transaction]:
         """
         Get all transactions with a specific hash (across all networks).
         
         Args:
-            hash: The transaction hash
+            tx_hash: The transaction hash
             
         Returns:
             List of transaction instances with the specified hash

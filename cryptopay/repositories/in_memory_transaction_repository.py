@@ -48,9 +48,9 @@ class InMemoryTransactionRepository(TransactionRepository):
         """Retrieves all transactions for a given network."""
         return [tx for tx in self._transactions.values() if tx.network == network]
 
-    def get_transactions_by_hash(self, hash: str) -> List[Transaction]:
+    def get_transactions_by_hash(self, tx_hash: str) -> List[Transaction]:
         """Retrieves all transactions for a given hash."""
-        return [tx for tx in self._transactions.values() if tx.hash == hash]
+        return [tx for tx in self._transactions.values() if tx.hash == tx_hash]
 
     def update_transaction(self, transaction: Transaction) -> Transaction:
         """Updates a transaction."""
