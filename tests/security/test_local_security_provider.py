@@ -5,7 +5,7 @@ Tests for the LocalSecurityProvider.
 import pytest
 from cryptography.fernet import Fernet, InvalidToken
 
-from cryptopay.security.local_security_provider import LocalSecurityProvider
+from cryptopay.security.fernet_security_provider import FernetSecurityProvider
 
 
 @pytest.fixture
@@ -17,14 +17,14 @@ def secret_key() -> bytes:
 
 
 @pytest.fixture
-def security_provider(secret_key: bytes) -> LocalSecurityProvider:
+def security_provider(secret_key: bytes) -> FernetSecurityProvider:
     """
     Fixture to provide a LocalSecurityProvider instance.
     """
-    return LocalSecurityProvider(secret_key)
+    return FernetSecurityProvider(secret_key)
 
 
-def test_encrypt_decrypt_success(security_provider: LocalSecurityProvider):
+def test_encrypt_decrypt_success(security_provider: FernetSecurityProvider):
     """
     Test that data can be encrypted and decrypted successfully.
     """
@@ -34,7 +34,7 @@ def test_encrypt_decrypt_success(security_provider: LocalSecurityProvider):
     assert decrypted_data == data
 
 
-def test_decrypt_with_different_key_fails(security_provider: LocalSecurityProvider):
+def test_decrypt_with_different_key_fails(security_provider: FernetSecurityProvider):
     """
     Test that decryption fails with a different key.
     """
@@ -43,13 +43,13 @@ def test_decrypt_with_different_key_fails(security_provider: LocalSecurityProvid
 
     # Create a new security provider with a different key
     different_key = Fernet.generate_key()
-    different_security_provider = LocalSecurityProvider(different_key)
+    different_security_provider = FernetSecurityProvider(different_key)
 
     with pytest.raises(InvalidToken):
         different_security_provider.decrypt_bytes(encrypted_data)
 
 
-def test_encrypt_empty_data(security_provider: LocalSecurityProvider):
+def test_encrypt_empty_data(security_provider: FernetSecurityProvider):
     """
     Test that empty data can be encrypted and decrypted.
     """
