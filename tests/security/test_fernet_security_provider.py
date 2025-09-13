@@ -1,5 +1,5 @@
 """
-Tests for the LocalSecurityProvider.
+Tests for the FernetSecurityProvider.
 """
 
 import pytest
