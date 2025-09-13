@@ -7,8 +7,8 @@ from decimal import Decimal
 from time import time
 
 from cryptopay.enums import InvoiceStatus
-from cryptopay.models.invoice import Invoice
-from cryptopay.repositories.invoice.in_memory_invoice_repository import InMemoryInvoiceRepository
+from cryptopay.models import Invoice
+from cryptopay.repositories import InMemoryInvoiceRepository
 
 
 @pytest.fixture

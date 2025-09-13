@@ -4,8 +4,8 @@ Tests for the InMemoryTransactionRepository.
 
 import pytest
 
-from cryptopay.models.transaction import Transaction
-from cryptopay.repositories.transaction.in_memory_transaction_repository import InMemoryTransactionRepository
+from cryptopay.models import Transaction
+from cryptopay.repositories import InMemoryTransactionRepository
 
 
 @pytest.fixture
