@@ -10,7 +10,7 @@ from cryptography.fernet import Fernet
 from cryptopay.interfaces.security_provider import SecurityProvider
 
 
-class LocalSecurityProvider(SecurityProvider):
+class FernetSecurityProvider(SecurityProvider):
     """
     Local security provider using Fernet encryption.
 
