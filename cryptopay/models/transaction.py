@@ -1,8 +1,5 @@
 from pydantic import BaseModel, Field, field_validator
 
-from crypto_payments.enums.network import Network
-
-
 class Transaction(BaseModel):
     """
     Represents a blockchain transaction that pays an invoice.
@@ -47,7 +44,7 @@ class Transaction(BaseModel):
     id: int = Field(..., description="Unique identifier of the transaction")
     invoice_id: int = Field(..., description="Identifier of the invoice being paid")
     hash: str = Field(..., description="Hash of the transaction in the blockchain")
-    network: Network = Field(..., description="Blockchain network where the transaction was executed")
+    network: str = Field(..., description="Blockchain network where the transaction was executed")
     
     @field_validator("hash")
     @classmethod
