@@ -21,6 +21,10 @@ packages = [{include = "cryptopay"}]
 [tool.poetry.dependencies]
 python = "^3.12"
 pydantic = "^2.11.9"
+cryptography = "^45.0.7"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.2"
 
 [build-system]
 requires = ["poetry-core"]
