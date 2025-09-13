@@ -1,6 +1,5 @@
 from pydantic import BaseModel, Field, field_validator
 
-
 class Transaction(BaseModel):
     """
     Represents a blockchain transaction that pays an invoice.
