@@ -6,8 +6,8 @@ import pytest
 from decimal import Decimal
 from time import time
 
-from cryptopay.models.exchange_rate import ExchangeRate
-from cryptopay.repositories.exchange_rate.in_memory_exchange_rate_repository import InMemoryExchangeRateRepository
+from cryptopay.models import ExchangeRate
+from cryptopay.repositories import InMemoryExchangeRateRepository
 
 
 @pytest.fixture
